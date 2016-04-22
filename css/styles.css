@@ -1,0 +1,37 @@
+#container {
+    width: 1000px;
+    min-width: 1000px;
+}
+
+h1, h2 {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 1px;
+    margin-top: 5px;
+}
+
+h1 {
+    font-size: 1.2em;
+}
+
+.score {
+    width: 30px;
+    text-align: center;
+}
+
+.homeTeam, .awayTeam {
+    display: inline-block;
+    width: 170px;
+}
+
+.homeTeam {
+    text-align: right;
+}
+
+.fixture > * {
+    margin-left: 5px;
+}
+
+.fixture {
+    margin-bottom: 5px;
+}
