@@ -14,6 +14,9 @@ h1 {
     font-size: 1.2em;
 }
 
+.leagueSelect {
+    margin-top: 5px;
+}
 .score {
     width: 30px;
     text-align: center;
@@ -45,4 +48,5 @@ h1 {
     overflow-y: scroll;
     height: 100%;
     min-width: 460px;
+    font-size: 11px;
 }

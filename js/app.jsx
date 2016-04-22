@@ -12,13 +12,23 @@ var LeagueSelect = React.createClass({
     render: function() {
         return (
             <div className="leagueSelect form-group">
-                <label for="league">Select League</label>
                 <select
                     id="league"
-                    className="league"
+                    className="league form-control"
                     onChange={this.handleChange}
                     autoFocus={true}>
-                    <option value="EPL">EPL</option>
+                    <option value="PL">Premier League</option>
+                    <option value="EL1">League One</option>
+                    <option value="FL1">Ligue 1</option>
+                    <option value="FL2">Ligue 2</option>
+                    <option value="BL1">1. Bundesliga</option>
+                    <option value="BL2">2. Bundesliga</option>
+                    <option value="BL3">3. Bundesliga</option>
+                    <option value="PD">Primera Division</option>
+                    <option value="SD">Segunda Division</option>
+                    <option value="SA">Serie A</option>
+                    <option value="PPL">Primeira Liga</option>
+                    <option value="DED">Eredivisie</option>
                 </select>
             </div>
         );
@@ -153,7 +163,7 @@ var TableRow = React.createClass({
 var App = React.createClass({
     getInitialState: function() {
         return {
-            league: "EPL",
+            league: "PL",
             pastFixtures: [],
             upcomingFixtures: [],
             season: []
@@ -191,7 +201,18 @@ var App = React.createClass({
 
     fetchFixtures: function() {
         var leagueKeys = {
-            "EPL": 398
+            "PL": 398,
+            "EL1": 425,
+            "FL1": 396,
+            "FL2": 397,
+            "BL1": 394,
+            "BL2": 395,
+            "BL3": 403,
+            "PD": 399,
+            "SD": 400,
+            "SA": 401,
+            "PPL": 402,
+            "DED": 404
         };
 
         var season = leagueKeys[this.state.league];
@@ -336,7 +357,11 @@ var App = React.createClass({
     },
 
     handleLeagueChange: function(league) {
-        // this.setState({ league: league });
+        var that = this;
+
+        this.setState({ league: league }, function() {
+            that.fetchFixtures();
+        });
     },
 
     render: function() {
@@ -349,6 +374,8 @@ var App = React.createClass({
                     <header>
                         <h1>Table Predictor</h1>
                         <h2>Created by: <a href="https://github.com/emmerich" target="_blank">emmerich</a> | Data powered by: <a href="http://www.football-data.org/" target="_blank">football-data.org</a></h2>
+                        <LeagueSelect league={this.state.league}
+                                        handleLeagueChange={this.handleLeagueChange}/>
                     </header>
                     <h3>Upcoming Fixtures</h3>
                     <FixtureList fixtures={this.state.upcomingFixtures}
