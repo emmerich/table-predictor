@@ -35,3 +35,14 @@ h1 {
 .fixture {
     margin-bottom: 5px;
 }
+
+.fixtures-container {
+    min-width: 460px;
+}
+.table-container {
+    position: fixed;
+    left: 50%;
+    overflow-y: scroll;
+    height: 100%;
+    min-width: 460px;
+}

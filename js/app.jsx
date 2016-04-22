@@ -345,7 +345,11 @@ var App = React.createClass({
                 //               handleLeagueChange={this.handleLeagueChange}/>
         return (
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-xs-6 fixtures-container">
+                    <header>
+                        <h1>Table Predictor</h1>
+                        <h2>Created by: <a href="https://github.com/emmerich" target="_blank">emmerich</a> | Data powered by: <a href="http://www.football-data.org/" target="_blank">football-data.org</a></h2>
+                    </header>
                     <h3>Upcoming Fixtures</h3>
                     <FixtureList fixtures={this.state.upcomingFixtures}
                              updateFixture={this.updateFixture}/>
@@ -353,8 +357,7 @@ var App = React.createClass({
                     <FixtureList fixtures={this.state.pastFixtures}
                              updateFixture={this.updateFixture}/>
                 </div>
-                <div className="col-md-6">
-                    <h3>Live Table</h3>
+                <div className="col-xs-6 table-container">
                     <Table season={this.state.season} />
                 </div>
             </div>
