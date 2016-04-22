@@ -376,6 +376,7 @@ var App = React.createClass({
                         <h2>Created by: <a href="https://github.com/emmerich" target="_blank">emmerich</a> | Data powered by: <a href="http://www.football-data.org/" target="_blank">football-data.org</a></h2>
                         <LeagueSelect league={this.state.league}
                                         handleLeagueChange={this.handleLeagueChange}/>
+                        <h2 className="warning">If nothing loads it's because too many people are using it. Try again in a minute.</h2>
                     </header>
                     <h3>Upcoming Fixtures</h3>
                     <FixtureList fixtures={this.state.upcomingFixtures}

@@ -50,3 +50,7 @@ h1 {
     min-width: 460px;
     font-size: 11px;
 }
+
+.warning {
+    color: #C30808;
+}
